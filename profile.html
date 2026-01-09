@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Break-IT-Down</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="app-mode">
+
+    <main class="home-container"> <header class="profile-header">
+            <h2>Profile</h2>
+            <a href="#" class="logout-icon-btn" id="logoutBtn">
+                <i class="fa-solid fa-right-from-bracket"></i>
+            </a>
+        </header>
+
+        <div class="profile-pic-container">
+            <div class="pic-wrapper">
+                <img src="prof pic.png" alt="Profile Avatar" class="profile-avatar">
+                <div class="edit-pic-btn">
+                    <i class="fa-solid fa-camera"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="profile-content">
+            <form action="#">
+                
+                <div class="name-row">
+                    <div class="input-half">
+                        <label class="profile-label">First Name</label>
+                        <input type="text" value="Constantino" class="profile-input">
+                    </div>
+                    <div class="input-half">
+                        <label class="profile-label">Last Name</label>
+                        <input type="text" value="Solomon Jr" class="profile-input">
+                    </div>
+                </div>
+
+                <label class="profile-label">Email Address</label>
+                <input type="email" value="slmnconstantino@gmail.com" class="profile-input">
+
+                <label class="profile-label">Date of Birth</label>
+                <div class="date-wrapper">
+                    <input type="text" value="02 / 13 / 2002" class="profile-input">
+                    <i class="fa-solid fa-calendar"></i>
+                </div>
+
+                <button type="submit" class="btn-update">Update Profile</button>
+
+            </form>
+        </div>
+
+        <nav class="bottom-nav">
+            <a href="home.html" class="nav-item">
+                <i class="fa-solid fa-house"></i>
+            </a>
+            <a href="calendar.html" class="nav-item">
+                <i class="fa-solid fa-calendar"></i>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-comment-dots"></i>
+            </a>
+            <a href="profile.html" class="nav-item active">
+                <i class="fa-solid fa-user"></i>
+            </a>
+        </nav>
+
+    </main>
+
+    <div class="logout-overlay" id="logoutModal">
+        <div class="logout-box">
+            <i class="fa-solid fa-triangle-exclamation warning-icon"></i>
+            <h3>Log out?</h3>
+            <p>You will be returned to the login page.</p>
+            
+            <div class="logout-actions">
+                <a href="login.html" class="btn-confirm-logout">Log Out</a>
+                <button class="btn-cancel-logout" id="cancelLogout">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const logoutBtn = document.getElementById('logoutBtn');
+        const logoutModal = document.getElementById('logoutModal');
+        const cancelLogout = document.getElementById('cancelLogout');
+
+        // Show Modal
+        logoutBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            logoutModal.classList.add('active');
+        });
+
+        // Hide Modal on Cancel
+        cancelLogout.addEventListener('click', () => {
+            logoutModal.classList.remove('active');
+        });
+
+        // Close if clicked outside the box
+        logoutModal.addEventListener('click', (e) => {
+            if (e.target === logoutModal) {
+                logoutModal.classList.remove('active');
+            }
+        });
+    </script>
+
+</body>
+</html>

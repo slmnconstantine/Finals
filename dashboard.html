@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Break-IT-Down</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <main class="home-container">
+        
+        <header class="home-header">
+            <div class="user-info">
+                <h1>Hello, Constantino</h1>
+                <p>Conquer the day.</p>
+            </div>
+            <img src="prof pic.png" alt="Profile" class="profile-pic">
+        </header>
+
+        <section class="filter-section">
+            <button class="filter-btn active">My Tasks</button>
+            <button class="filter-btn inactive">In-progress</button>
+            <button class="filter-btn inactive">Completed</button>
+        </section>
+
+        <section class="horizontal-scroll">
+            <div class="project-card">
+                <h3>Essay on Hobbies</h3>
+                <p>Self-exploration essay on favorite hobbies</p>
+            </div>
+            <div class="project-card">
+                <h3>HCI - System Proposal</h3>
+                <p>Preparing for system proposal presentation</p>
+            </div>
+            <div class="project-card">
+                <h3>RVA - Web Layout</h3>
+                <p>Make a website version of the HCI system</p>
+            </div>
+            <div class="project-card">
+                <h3>Math Finals</h3>
+                <p>Review Chapter 1-5 for upcoming exam</p>
+            </div>
+        </section>
+
+        <section class="deadlines-section">
+            <h2 class="section-title">Upcoming Deadlines</h2>
+            
+            <div class="deadline-list">
+                <div class="deadline-card">
+                    <div class="date-box">
+                        <span class="date-month">Jan</span>
+                        <span class="date-day">28</span>
+                    </div>
+                    <div class="task-info">
+                        HCI - System Proposal
+                    </div>
+                </div>
+
+                <div class="deadline-card">
+                    <div class="date-box">
+                        <span class="date-month">Jan</span>
+                        <span class="date-day">29</span>
+                    </div>
+                    <div class="task-info">
+                        Essay on Hobbies
+                    </div>
+                </div>
+
+                <div class="deadline-card">
+                    <div class="date-box">
+                        <span class="date-month">Jan</span>
+                        <span class="date-day">31</span>
+                    </div>
+                    <div class="task-info">
+                        RVA - Web Layout
+                    </div>
+                </div>
+                 <div class="deadline-card">
+                    <div class="date-box">
+                        <span class="date-month">Feb</span>
+                        <span class="date-day">02</span>
+                    </div>
+                    <div class="task-info">
+                        Database Project
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="fab-container">
+            <button class="fab">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </div>
+
+        <nav class="bottom-nav">
+            <a href="dashboard.html" class="nav-item active">
+                <i class="fa-solid fa-house"></i>
+            </a>
+            <a href="calendar.html" class="nav-item">
+                <i class="fa-solid fa-calendar"></i>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-comment-dots"></i>
+            </a>
+            <a href="profile.html" class="nav-item">
+                <i class="fa-solid fa-user"></i>
+            </a>
+        </nav>
+
+    </main>
+<div class="modal-overlay" id="createTaskModal">
+        <div class="modal-header">
+            <button class="close-modal-btn" id="closeModalBtn">
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <h2>Create a Task</h2>
+        </div>
+
+        <form class="task-form">
+            <label>Task Title</label>
+            <input type="text" class="task-input" placeholder="">
+
+            <label>Task Description</label>
+            <textarea class="task-textarea" placeholder=""></textarea>
+
+            <label>Set Task Deadline</label>
+            <div class="date-wrapper">
+                <input type="date" class="task-input">
+                <i class="fa-solid fa-calendar"></i>
+            </div>
+
+            <label>Set Task Reminder</label>
+            <div class="reminder-row">
+                <span class="reminder-text">Every</span>
+                
+                <select class="reminder-select">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                </select>
+
+                <select class="reminder-select">
+                    <option value="minutes">Minutes</option>
+                    <option value="hours">Hours</option>
+                    <option value="days">Days</option>
+                </select>
+            </div>
+
+            <button type="button" class="btn-add-task">Add Task</button>
+        </form>
+    </div>
+    <script>
+        // Select elements
+        const fab = document.querySelector('.fab'); // The Plus Button
+        const modal = document.getElementById('createTaskModal'); // The Popup
+        const closeBtn = document.getElementById('closeModalBtn'); // The Back Arrow
+
+        // Open Modal when Plus button is clicked
+        fab.addEventListener('click', () => {
+            modal.classList.add('active');
+        });
+
+        // Close Modal when Back Arrow is clicked
+        closeBtn.addEventListener('click', () => {
+            modal.classList.remove('active');
+        });
+    </script>
+</body>
+</html>

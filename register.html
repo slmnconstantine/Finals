@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Break-IT-Down</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="light-mode">
+
+    <main class="auth-container">
+        
+        <div class="auth-header">
+            <a href="login.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i></a>
+            <span class="page-title">Register</span>
+        </div>
+
+        <img src="logo.png" alt="Break-IT-Down Logo" class="auth-logo">
+
+        <form class="auth-form" action="#">
+            
+            <div class="input-group has-label">
+                <label class="input-label">Username</label>
+                <input type="text" class="auth-input" required>
+            </div>
+
+            <div class="input-group has-label">
+                <label class="input-label">Password</label>
+                <input type="password" class="auth-input" required>
+                <i class="fa-solid fa-eye-slash toggle-password"></i>
+            </div>
+
+            <div class="input-group has-label">
+                <label class="input-label">Confirm Password</label>
+                <input type="password" class="auth-input" required>
+                <i class="fa-solid fa-eye-slash toggle-password"></i>
+            </div>
+
+            <div class="input-group has-label">
+                <label class="input-label">Email</label>
+                <input type="email" class="auth-input" required>
+            </div>
+
+            <label class="checkbox-container">
+                <input type="checkbox" required> 
+                <span>I have read and agree to the <b>terms and conditions.</b></span>
+            </label>
+
+            <button type="submit" class="btn-black">Sign up</button>
+        </form>
+
+    </main>
+
+</body>
+</html>
