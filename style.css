@@ -366,10 +366,14 @@ body.light-mode {
 }
 /* =========================================
    HOME PAGE STYLES
+ 
+ 
    ========================================= */
 
 /* Main container for home to handle spacing */
 .home-container {
+    width: 100%;
+    max-width: none;
     background-color: #F5F5F7;
     min-height: 100vh;
     padding-bottom: 90px; /* Space for bottom nav */
@@ -579,6 +583,7 @@ body.light-mode {
     border-top-right-radius: 20px;
     box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
     z-index: 20;
+    flex-shrink: 0;
 }
 
 .nav-item {
@@ -736,22 +741,25 @@ body.light-mode {
 
 /* Main Container for Calendar */
 .calendar-container {
+    width: 100%;        /* Forces full width */
+    max-width: none;    /* Removes the mobile strip limitation */
+    margin: 0;          /* Removes centering margins */
     background-color: #fff;
-    min-height: 100vh;
-    padding-bottom: 90px; /* Space for bottom nav */
+    height: 100vh;
+    overflow: hidden;
+    padding-bottom: 0px; /* Space for bottom nav */
     display: flex;
     flex-direction: column;
 }
 
 /* --- Calendar Header (Dark Top Section) --- */
 .calendar-header {
-    background-color: #455A64; /* Dark Slate */
+    flex-shrink: 0;      /* NEW: Prevents header from shrinking if space is tight */
+    background-color: #455A64;
     color: #fff;
     padding: 20px 20px 15px 20px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    z-index: 5;
+    border-radius: 0;    /* Flush edges */
+    z-index: 10;
 }
 
 /* Month and Actions Row */
@@ -824,10 +832,11 @@ body.light-mode {
 
 /* --- Timeline Scroll Area --- */
 .timeline-view {
-    flex: 1;
+    flex: 1;             /* Takes up all available space between Header and Nav */
     padding: 20px;
-    overflow-y: auto;
+    overflow-y: auto;    /* NEW: Adds scrollbar ONLY to this section */
     position: relative;
+    width: 100%;
 }
 
 /* Time Rows */
@@ -856,7 +865,7 @@ body.light-mode {
 .calendar-task-card {
     position: absolute;
     left: 70px; /* Offset to right of time labels */
-    right: 0;
+    right: 20px;
     background-color: #546E7A; /* Slightly lighter than header */
     color: #fff;
     padding: 10px 15px;
